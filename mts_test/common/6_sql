@@ -1,0 +1,7 @@
+SELECT * FROM (
+  SELECT t.name, c.location, c.country_code, t.tweet_sentiment FROM twits_twit t JOIN twits_country c ON t.country_id = c.id ORDER BY t.tweet_sentiment DESC LIMIT 1)
+
+UNION
+
+SELECT * FROM (
+    SELECT t.name, c.location, c.country_code, t.tweet_sentiment FROM twits_twit t JOIN twits_country c ON t.country_id = c.id ORDER BY t.tweet_sentiment ASC LIMIT 1)
